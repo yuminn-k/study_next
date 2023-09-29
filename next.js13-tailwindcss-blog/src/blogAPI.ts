@@ -7,6 +7,8 @@ export const getAllArticles = async (): Promise<Article[]> => {
     throw new Error("エラーが発生しました。"); // エラー処理
   }
 
+  await new Promise((resolve) => setTimeout(resolve, 1500)); // 1.5秒待つ
+
   const articles = await res.json(); // 文字列化
   return articles;
 };
